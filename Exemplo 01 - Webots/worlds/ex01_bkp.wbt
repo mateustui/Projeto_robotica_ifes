@@ -1,0 +1,193 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.027936951410829417 0.987631835082481 0.1542818365118863 3.3808456914751472
+  position -0.20286945797538272 0.4745149426817989 -0.7039005858823231
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2 2
+  floorAppearance Appearance {
+    material Material {
+      ambientIntensity 0
+      diffuseColor 1 1 1
+      emissiveColor 1 1 1
+      shininess 0
+      specularColor 1 1 1
+    }
+    texture ImageTexture {
+      url [
+        "textures/circulo_large.jpg"
+      ]
+      repeatS FALSE
+      repeatT FALSE
+    }
+    textureTransform TextureTransform {
+      scale 0.25 0.25
+    }
+  }
+}
+Robot {
+  translation 0 0.1 0
+  rotation 1 0 0 0
+  children [
+    DEF RodaL HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.1 0 0
+      }
+      endPoint Solid {
+        translation -0.1 0 0
+        children [
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor -0.02 -0.018 0
+            }
+            endPoint Solid {
+              translation -0.02 -0.018 0
+              rotation -0.38627067814042965 0.6522246912396686 -0.6522253562582886 2.404361936100488
+              children [
+                DEF rodaLroda Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Cylinder {
+                    height 0.005
+                    radius 0.01
+                  }
+                }
+              ]
+              boundingObject USE rodaLroda
+              physics Physics {
+              }
+            }
+          }
+          DEF rodaLEixoHorizontal Transform {
+            translation -0.01 -0.018 0
+            rotation 0 0 1 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                }
+                geometry Capsule {
+                  height 0.02
+                  radius 0.005
+                  subdivision 24
+                }
+              }
+            ]
+          }
+          DEF rodaLEixoVertical Transform {
+            translation 0 -0.007 0
+            children [
+              Shape {
+                appearance PBRAppearance {
+                }
+                geometry Capsule {
+                  height 0.02
+                  radius 0.005
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        name "solid(2)"
+        boundingObject Group {
+          children [
+            USE rodaLEixoHorizontal
+            USE rodaLEixoVertical
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF RodaE HingeJoint {
+      jointParameters HingeJointParameters {
+        position -7.435371983816939
+        axis 0 0 -1
+        anchor 0.05 0 -0.07
+      }
+      device [
+        RotationalMotor {
+          name "motorE"
+        }
+      ]
+      endPoint Solid {
+        translation 0.04999958941986372 1.8868144337906924e-06 -0.06999983082182952
+        rotation 0.7419063468517622 0.47392897463831907 0.4743061242481952 1.864227017431705
+        children [
+          DEF rodaE Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.03
+            }
+          }
+        ]
+        boundingObject USE rodaE
+        physics Physics {
+        }
+      }
+    }
+    DEF RodaD HingeJoint {
+      jointParameters HingeJointParameters {
+        position -7.4356715621476654
+        axis 0 0 -1
+        anchor 0.05 0 0.07
+      }
+      device [
+        RotationalMotor {
+          name "motorD"
+        }
+      ]
+      endPoint Solid {
+        translation 0.05000193447244639 -9.589863614196212e-07 0.07000060851369364
+        rotation -0.7298979323447945 -0.48315515221377303 -0.48353914758588035 4.403371910219796
+        children [
+          DEF rodaD Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE rodaD
+        physics Physics {
+        }
+      }
+    }
+    DEF Corpo Transform {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.741176 0.494118 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.22 0.01 0.16
+          }
+        }
+      ]
+    }
+  ]
+  name "Robo_Ifes"
+  boundingObject Group {
+    children [
+      USE Corpo
+    ]
+  }
+  physics Physics {
+  }
+  controller "ex01_c_cont"
+}

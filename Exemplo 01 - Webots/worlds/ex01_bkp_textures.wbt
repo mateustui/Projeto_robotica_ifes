@@ -1,0 +1,392 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.1324014380738756 0.9790486764310293 0.15470471348546289 2.8480347000989368
+  position 0.556046855396251 0.46621504856253027 -1.6104179303287751
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2 2
+  floorAppearance Appearance {
+    material Material {
+      ambientIntensity 0
+      diffuseColor 1 1 1
+      emissiveColor 1 1 1
+      shininess 0
+      specularColor 1 1 1
+    }
+    texture ImageTexture {
+      url [
+        "textures/circulo_large.jpg"
+      ]
+      repeatS FALSE
+      repeatT FALSE
+    }
+    textureTransform TextureTransform {
+      scale 0.25 0.25
+    }
+  }
+}
+DEF Quebra-molas Solid {
+  translation 0.29 0 0
+  rotation 1 0 0 -1.5707953071795862
+  children [
+    DEF quebra-molas Shape {
+      appearance PBRAppearance {
+      }
+      geometry Cylinder {
+        height 0.25
+        radius 0.01
+      }
+    }
+  ]
+  boundingObject USE quebra-molas
+}
+Robot {
+  translation 0 0.1 0
+  rotation 1 0 0 0
+  children [
+    DistanceSensor {
+      translation 0.1 -0.005 0.07
+      rotation 0 0 -1 1.5707996938995747
+      children [
+        DEF tcrt Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.01 0.01 0.005
+          }
+        }
+      ]
+      name "l1"
+      boundingObject USE tcrt
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.1 -0.005 0.035
+      rotation 0 0 -1 1.5707996938995747
+      children [
+        DEF tcrt Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.01 0.01 0.005
+          }
+        }
+      ]
+      name "l2"
+      boundingObject USE tcrt
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.1 -0.005 0
+      rotation 0 0 -1 1.5707996938995747
+      children [
+        DEF tcrt Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.01 0.01 0.005
+          }
+        }
+      ]
+      name "l3"
+      boundingObject USE tcrt
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.1 -0.005 -0.035
+      rotation 0 0 -1 1.5707996938995747
+      children [
+        DEF tcrt Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.01 0.01 0.005
+          }
+        }
+      ]
+      name "l4"
+      boundingObject USE tcrt
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.1 -0.005 -0.07
+      rotation 0 0 -1 1.5707996938995747
+      children [
+        DEF tcrt Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.01 0.01 0.005
+          }
+        }
+      ]
+      name "l5"
+      boundingObject USE tcrt
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.11 0.01 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.3 1 1
+            metalnessMap ImageTexture {
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.04
+          }
+        }
+      ]
+      name "d1"
+      contactMaterial ""
+      recognitionColors [
+        1 1 1
+      ]
+      type "sonar"
+      numberOfRays 5
+      aperture 1
+      resolution 0.001
+    }
+    DEF RodaL HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.1 0 0
+      }
+      endPoint Solid {
+        translation -0.09999998165722362 1.6210927591894797e-06 1.8223860328279211e-13
+        rotation 5.906375027842788e-06 -0.3172885912041725 -0.94832903037753 2.9802322387695313e-08
+        children [
+          DEF JuntaRoda HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor -0.02 -0.018 0
+            }
+            endPoint Solid {
+              translation -0.02 -0.018 0
+              rotation -0.3862709639433454 0.6522249391177397 -0.6522249391177397 2.4043600000000005
+              children [
+                DEF CalotaRodaL Transform {
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColorMap ImageTexture {
+                          url [
+                            "textures/calota_preta.jpg"
+                          ]
+                        }
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.005
+                        radius 0.009
+                      }
+                    }
+                  ]
+                }
+                DEF rodaLroda Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 0 0
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.0045
+                    radius 0.01
+                  }
+                }
+              ]
+              boundingObject USE rodaLroda
+              physics Physics {
+              }
+            }
+          }
+          DEF rodaLEixoHorizontal Transform {
+            translation -0.01 -0.018 0
+            rotation 0 0 1 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.580392 0.580392 0.580392
+                  metalness 0
+                }
+                geometry Capsule {
+                  height 0.02
+                  radius 0.005
+                  subdivision 24
+                }
+              }
+            ]
+          }
+          DEF rodaLEixoVertical Transform {
+            translation 0 -0.007 0
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.580392 0.580392 0.580392
+                  metalness 0
+                }
+                geometry Capsule {
+                  height 0.02
+                  radius 0.005
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        name "solid(2)"
+        boundingObject Group {
+          children [
+            USE rodaLEixoHorizontal
+            USE rodaLEixoVertical
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF RodaE HingeJoint {
+      jointParameters HingeJointParameters {
+        position -7.435371983816939
+        axis 0 0 -1
+        anchor 0.05 0 -0.07
+      }
+      device [
+        RotationalMotor {
+          name "motorE"
+        }
+      ]
+      endPoint Solid {
+        translation 0.04999931773741922 3.792303878585991e-06 -0.0699998308138625
+        rotation -0.7399190767677717 -0.47547859349545984 -0.4758569816265256 4.4163917410002185
+        children [
+          DEF Calota Transform {
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 1 0
+                  baseColorMap ImageTexture {
+                    url [
+                      "textures/calota_preta.jpg"
+                    ]
+                  }
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.031
+                  radius 0.029
+                }
+              }
+            ]
+          }
+          DEF rodaE Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "textures/caster_wheel_base_color.jpg"
+                ]
+              }
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.03
+            }
+          }
+        ]
+        boundingObject USE rodaE
+        physics Physics {
+        }
+      }
+    }
+    DEF RodaD HingeJoint {
+      jointParameters HingeJointParameters {
+        position -7.4356715621476654
+        axis 0 0 -1
+        anchor 0.05 0 0.07
+      }
+      device [
+        RotationalMotor {
+          name "motorD"
+        }
+      ]
+      endPoint Solid {
+        translation 0.050001670988106324 1.0113753898923612e-06 0.07000060852157688
+        rotation -0.7278952526930342 -0.48466224039823735 -0.48504743462789845 4.400755596841801
+        children [
+          DEF Calota Transform {
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 1 0
+                  baseColorMap ImageTexture {
+                    url [
+                      "textures/calota_preta.jpg"
+                    ]
+                  }
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.031
+                  radius 0.029
+                }
+              }
+            ]
+          }
+          DEF rodaD Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "textures/caster_wheel.jpg"
+                ]
+              }
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.03
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE rodaD
+        physics Physics {
+        }
+      }
+    }
+    DEF Corpo Transform {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.666667 0.666667 0
+            baseColorMap ImageTexture {
+              url [
+                "textures/desktop_wood.jpg"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.22 0.01 0.16
+          }
+        }
+      ]
+    }
+  ]
+  name "Robo_Ifes"
+  boundingObject Group {
+    children [
+      USE Corpo
+    ]
+  }
+  physics Physics {
+  }
+  controller "ex01_c_cont"
+}
