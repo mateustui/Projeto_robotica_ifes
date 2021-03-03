@@ -3,15 +3,15 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.9058345617447088 -0.31542094560474354 0.2827956396809911 5.217695712392969
-  position 1.8217602575282728 4.325370473447328 3.1850645328835343
+  orientation -0.07370767202060073 0.9751920469399705 0.2087286532087394 4.366173379608819
+  position -2.0607695908803025 0.5431650452130806 -1.466571319227425
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
-  rotation 1 0 0 4.692820414042842e-06
+  rotation 1 0 0 4.6928012867022945e-06
   floorSize 2.5 2
   floorAppearance Appearance {
     material Material {
@@ -20,8 +20,8 @@ RectangleArena {
   }
 }
 Robot {
-  translation 1.1306294251803815 0.02921696913776277 -0.5999022459866826
-  rotation -0.024328606836884887 0.01597399208465228 -0.9995763855085091 -0.01319368032962042
+  translation -0.851288978152368 0.029257379856436734 0.3244709996541925
+  rotation 0.005643785151506496 0.726274224793946 -0.6873819157419813 -0.016453508442385335
   children [
     DistanceSensor {
       translation 0.1 -0.005 0.026
@@ -396,23 +396,23 @@ Robot {
     }
     DEF RodaL HingeJoint {
       jointParameters HingeJointParameters {
-        position -1.2423489804245116
+        position 12.5768042844095
         axis 0 1 0
         anchor -0.1 0 0
       }
       endPoint Solid {
-        translation -0.09999999408327412 1.621092759189473e-06 1.7362309759528617e-08
-        rotation 0 -1 0 1.2423489804245116
+        translation -0.09999998165822012 1.6210927591894693e-06 -1.911967606996451e-10
+        rotation 0 0.9999999999999999 0 0.010433670050333034
         children [
           DEF JuntaRoda HingeJoint {
             jointParameters HingeJointParameters {
-              position -1166.06755634695
+              position -1770.6301265485877
               axis 0 0 1
               anchor -0.02 -0.018 0
             }
             endPoint Solid {
               translation -0.02 -0.018 0
-              rotation -0.9329608178822355 -0.25454208685605134 0.2545435882427151 1.6401323370074656
+              rotation -0.8441778108048421 0.37905439886589 -0.3790535403411537 1.739382717008347
               children [
                 DEF CalotaRodaL Transform {
                   children [
@@ -446,8 +446,8 @@ Robot {
               boundingObject USE rodaLroda
               physics Physics {
               }
-              linearVelocity 0.0004978983469647747 -5.435681353973324e-06 0.0015177635044846766
-              angularVelocity 0.14337113774395818 -0.041177151434217525 -0.04715007540967804
+              linearVelocity 0.06001100508363823 7.17260751162718e-05 5.081191326486758e-05
+              angularVelocity 0.005023092381683834 -0.036847904400079796 -5.993858980144705
             }
           }
           DEF rodaLEixoHorizontal Transform {
@@ -493,13 +493,13 @@ Robot {
         }
         physics Physics {
         }
-        linearVelocity -0.00011565852237200922 -1.5296675082712534e-05 0.001722814822223634
-        angularVelocity 0.0007243167496803022 -0.04304937780329268 0.00011861567203416863
+        linearVelocity 0.06001039496994663 6.800474384871908e-05 0.0005521577162672793
+        angularVelocity 0.0005155827518755702 -0.033368218396735434 -0.000237561370264505
       }
     }
     DEF RodaE HingeJoint {
       jointParameters HingeJointParameters {
-        position 343.7821232682602
+        position 540.1778405115548
         axis 0 0 -1
         anchor 0.05 0 -0.07
       }
@@ -509,8 +509,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.04999718569122151 2.631865694895879e-06 -0.0699998308138625
-        rotation -0.49562257799680476 -0.6139045464887926 -0.6143935774242688 4.0625072536566575
+        translation 0.05000275896873621 2.6898220107211813e-06 -0.0699998308138625
+        rotation 0.9931258050257953 0.08273568306819735 0.08280061677973631 1.5768970114211918
         children [
           DEF Calota Transform {
             children [
@@ -550,13 +550,13 @@ Robot {
         boundingObject USE rodaE
         physics Physics {
         }
-        linearVelocity -0.0011449591818694974 8.073247692451568e-06 3.0721235613454724e-05
-        angularVelocity 0.001002976313446611 0.012374765276702603 -1.999861144412103
+        linearVelocity 0.060017534678973035 3.4016947064073304e-05 0.0007237312639099099
+        angularVelocity 0.024052253597584564 -5.6070342198060995e-05 -2.000100151497922
       }
     }
     DEF RodaD HingeJoint {
       jointParameters HingeJointParameters {
-        position 206.46663988519066
+        position 404.52745837954654
         axis 0 0 -1
         anchor 0.05 0 0.07
       }
@@ -566,8 +566,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.05000188232212302 5.214833227628815e-07 0.07000060852157688
-        rotation -0.8253281177625811 -0.3991116486741321 -0.39942882960934517 4.522363420575975
+        translation 0.04999806320322286 -2.527838499238801e-07 0.07000060852157688
+        rotation 0.27183012154406044 -0.6802104369402172 -0.680751163420923 2.610356731039915
         children [
           DEF Calota Transform {
             children [
@@ -607,8 +607,8 @@ Robot {
         boundingObject USE rodaD
         physics Physics {
         }
-        linearVelocity 0.0004974880803093148 -1.6413482499301913e-06 2.9414412805752356e-05
-        angularVelocity 0.0010028841272295811 0.012374773474162626 -1.999861054089132
+        linearVelocity 0.06000802967408105 2.3982542080884448e-05 0.0007188223125226145
+        angularVelocity 0.024052216607516795 -5.6118375662918626e-05 -2.0001000915276848
       }
     }
     DEF Estrutura Transform {
@@ -635,10 +635,10 @@ Robot {
   physics Physics {
   }
   controller "controlador-principal"
-  linearVelocity -0.00032521588880507875 -4.53272183832106e-06 0.0005877522549701554
-  angularVelocity 4.814080349021997e-07 0.011753099212598178 0.00013794028969438106
+  linearVelocity 0.06001113423074982 4.1359215973803344e-05 0.0007211251801204019
+  angularVelocity 0.00013989704747409247 -7.85886332512345e-06 -0.00024307749728673926
 }
-Solid {
+DEF Caminho Solid {
   scale 0.01 0.01 0.01
   children [
     Solid {
@@ -669,4 +669,35 @@ Solid {
     }
   ]
   name "caminho.obj"
+}
+DEF Obstaculo Solid {
+  translation 0.289744 0.023679 -0.688583
+  children [
+    Shape {
+      appearance Asphalt {
+      }
+      geometry Cylinder {
+        height 0.2
+        radius 0.06
+      }
+    }
+  ]
+}
+DEF Lombada Solid {
+  translation 0.776948 2.08293e-13 -0.190069
+  rotation -2.653589999981315e-06 2.653589999981315e-06 0.9999999999929585 1.5708
+  children [
+    DEF Lombada Shape {
+      appearance Asphalt {
+      }
+      geometry Cylinder {
+        height 0.4
+        radius 0.03
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE Lombada
+  physics Physics {
+  }
 }
