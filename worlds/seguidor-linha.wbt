@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.24628879585878083 -0.9568172142160317 -0.154410646052351 1.160106882735893
-  position -1.1068747019541396 0.43534180627163316 0.784922003588751
+  orientation -0.07422255991468737 -0.9912144705365435 -0.10947549953606138 1.958183999635274
+  position -2.4094614980959044 0.6804377373716302 -1.5383116169904327
 }
 TexturedBackground {
 }
@@ -32,28 +32,9 @@ RectangleArena {
     }
   }
 }
-DEF Quebra-molas Solid {
-  translation 0.5442661861953809 0.009938361952124341 0.11976112798184195
-  rotation 0.6166146092623425 0.296264450109047 0.7293927606206637 -1.667163335314445
-  children [
-    DEF quebra-molas Shape {
-      appearance PBRAppearance {
-      }
-      geometry Cylinder {
-        height 0.25
-        radius 0.01
-      }
-    }
-  ]
-  boundingObject USE quebra-molas
-  physics Physics {
-  }
-  linearVelocity -0.009890039199970535 9.552503129691248e-14 -0.024307720496158088
-  angularVelocity -2.430772049615819 3.1364642187672744e-17 0.9890039199970521
-}
 Robot {
-  translation -0.1142135461191291 0.029088094529339012 -0.3096419186827449
-  rotation 0.006432094299528634 0.9028448041596577 0.4299184664152392 0.035007520789897745
+  translation 0.23704486232623154 0.029264917098718868 -0.773943101560241
+  rotation 0.005642162269244377 0.9999831651818328 0.0013547537970775348 2.669775312177264
   children [
     DistanceSensor {
       translation 0.1 -0.005 0.07
@@ -260,23 +241,23 @@ Robot {
     }
     DEF RodaL HingeJoint {
       jointParameters HingeJointParameters {
-        position 3.1599141199546734
+        position 6.2765948375359
         axis 0 1 0
         anchor -0.1 0 0
       }
       endPoint Solid {
-        translation -0.1000000183397012 1.6210927591894782e-06 3.3586555045245485e-10
-        rotation 0 0.9999999999999999 0 3.1599141199546734
+        translation -0.09999998165762318 1.6210927591894778e-06 1.2106887411541443e-10
+        rotation 0 1 0 6.27659483753588
         children [
           DEF JuntaRoda HingeJoint {
             jointParameters HingeJointParameters {
-              position -160.19745097236222
+              position -358.12023129978064
               axis 0 0 1
               anchor -0.02 -0.018 0
             }
             endPoint Solid {
               translation -0.02 -0.018 0
-              rotation -0.7580282752570167 -0.4611896660872113 0.46119109467252184 1.8443538026691153
+              rotation 0.39427222291246844 -0.6498266812019129 0.649826668149106 3.892712585465476
               children [
                 DEF CalotaRodaL Transform {
                   children [
@@ -310,8 +291,8 @@ Robot {
               boundingObject USE rodaLroda
               physics Physics {
               }
-              linearVelocity -8.394588659380617e-09 -2.1428878077263695e-07 -1.2558674380988523e-08
-              angularVelocity -1.4401909993502446e-06 -5.417517031909298e-07 8.488241599702622e-07
+              linearVelocity 9.51869165239209e-10 1.0935286668247318e-08 1.0739926868137045e-09
+              angularVelocity 7.541225495059621e-08 -7.213175589640253e-08 -1.1176863283578836e-07
             }
           }
           DEF rodaLEixoHorizontal Transform {
@@ -357,13 +338,13 @@ Robot {
         }
         physics Physics {
         }
-        linearVelocity -1.2831258303459551e-08 -2.263078663373908e-07 -2.797878821391384e-08
-        angularVelocity -1.4442380910497465e-06 -5.417752375309032e-07 7.678717234769321e-07
+        linearVelocity 1.8134784871888094e-09 1.8074608280353135e-09 4.076961351486968e-10
+        angularVelocity 5.0953003964364623e-08 -7.212772299648947e-08 -6.460317397167127e-08
       }
     }
     DEF RodaE HingeJoint {
       jointParameters HingeJointParameters {
-        position 60.526330670752074
+        position 97.61941420432326
         axis 0 0 -1
         anchor 0.05 0 -0.07
       }
@@ -373,8 +354,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.04999625675679334 9.138825047285175e-07 -0.0699998308138625
-        rotation 0.30319091557334854 0.6735546940432294 0.6740914944175801 2.5523852179385074
+        translation 0.04999640281113854 -1.381044254060467e-06 -0.0699998308138625
+        rotation 0.08488691463395714 0.704273725244112 0.7048352514273873 2.9720889715118006
         children [
           DEF Calota Transform {
             children [
@@ -414,13 +395,13 @@ Robot {
         boundingObject USE rodaE
         physics Physics {
         }
-        linearVelocity -2.1574019367793225e-08 -2.2766698608486569e-07 -4.548204969462365e-08
-        angularVelocity -1.451671390139888e-06 -4.655381788563483e-08 7.679219005181165e-07
+        linearVelocity 2.3927933728540154e-09 1.594176592920313e-08 1.5754831608820517e-09
+        angularVelocity 5.183940684001008e-08 6.0475411948535775e-09 -6.43503915305015e-08
       }
     }
     DEF RodaD HingeJoint {
       jointParameters HingeJointParameters {
-        position 60.52602915974902
+        position 80.02322992998393
         axis 0 0 -1
         anchor 0.05 0 0.07
       }
@@ -430,8 +411,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.0499997529624676 1.9375380998417973e-06 0.07000060852157688
-        rotation 0.2912395451077384 0.6761850235866873 0.6767224994357058 2.5743648975485884
+        translation 0.050000971921648686 1.6942401658425965e-06 0.07000060852157688
+        rotation -0.5349790836057924 -0.597172614467143 -0.5976472610451616 4.124729368161167
         children [
           DEF Calota Transform {
             children [
@@ -471,8 +452,8 @@ Robot {
         boundingObject USE rodaD
         physics Physics {
         }
-        linearVelocity -2.460210693642879e-08 -2.4184946132691226e-08 -4.346241971768414e-08
-        angularVelocity -1.4516721642660154e-06 -4.657990970782959e-08 7.681467563963343e-07
+        linearVelocity 1.6345210396808974e-09 1.798066719346264e-08 1.2146185139429147e-09
+        angularVelocity 5.182670901550391e-08 6.047414746270385e-09 -6.43677483768277e-08
       }
     }
     DEF Estrutura Transform {
@@ -498,5 +479,5 @@ Robot {
   boundingObject USE Estrutura
   physics Physics {
   }
-  controller "ex01_c_cont"
+  controller "controlador-principal"
 }
