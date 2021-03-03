@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.1324014380738756 0.9790486764310293 0.15470471348546289 2.8480347000989368
-  position 0.556046855396251 0.46621504856253027 -1.6104179303287751
+  orientation -0.0732073995812749 -0.9234008164214967 -0.3767912006385776 2.1961990195745136
+  position -2.3361556722461057 1.6496712806753853 -1.282956180432596
 }
 TexturedBackground {
 }
@@ -48,23 +48,60 @@ DEF Quebra-molas Solid {
   boundingObject USE quebra-molas
 }
 Robot {
-  translation 0 0.1 0
-  rotation 1 0 0 0
+  translation 0.00110746 0.0302976 0.00870831
+  rotation -0.2588180265803184 0.9659260991995171 1.5080101548709362e-06 0.261799
   children [
     DistanceSensor {
       translation 0.1 -0.005 0.07
       rotation 0 0 -1 1.5707996938995747
       children [
-        DEF tcrt Shape {
-          appearance PBRAppearance {
-          }
-          geometry Box {
-            size 0.01 0.01 0.005
-          }
+        DEF RECEPTOR Transform {
+          translation 0.002 -0.0025 0
+          rotation 0 0 1 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.2 0.1 0.2
+              }
+              geometry Capsule {
+                height 0.005
+                radius 0.0015
+              }
+            }
+          ]
+        }
+        DEF EMISSOR Transform {
+          translation 0.002 0.0025 0
+          rotation 0 0 1 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.4 0.4 1
+              }
+              geometry Capsule {
+                height 0.005
+                radius 0.0015
+              }
+            }
+          ]
+        }
+        DEF BASE Transform {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.1 0.1 0.1
+                roughness 1
+                metalness 0
+                IBLStrength 0
+              }
+              geometry Box {
+                size 0.005 0.012 0.0058
+              }
+            }
+          ]
         }
       ]
       name "l1"
-      boundingObject USE tcrt
       type "infra-red"
     }
     DistanceSensor {
@@ -132,17 +169,57 @@ Robot {
       type "infra-red"
     }
     DistanceSensor {
-      translation 0.11 0.01 0
+      translation 0.1085 0.015 0
       children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0.3 1 1
-            metalnessMap ImageTexture {
+        DEF CIRC Transform {
+          translation 0.005 0 -0.013
+          rotation 0 0 1 -1.5707996938995747
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.454902 0.454902 0.678431
+                metalness 0.5
+                normalMapFactor 0.5
+                emissiveColor 0.1 0.1 0.1
+              }
+              geometry Cylinder {
+                height 0.012
+                radius 0.008
+              }
             }
-          }
-          geometry Box {
-            size 0.01 0.01 0.04
-          }
+          ]
+          translationStep 0
+        }
+        DEF CIRC Transform {
+          translation 0.005 0 0.013
+          rotation 0 0 1 -1.5707996938995747
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.454902 0.454902 0.678431
+                metalness 0.5
+                normalMapFactor 0.5
+                emissiveColor 0.1 0.1 0.1
+              }
+              geometry Cylinder {
+                height 0.012
+                radius 0.008
+              }
+            }
+          ]
+          translationStep 0
+        }
+        DEF BASE Transform {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.1 0.2 1
+              }
+              geometry Box {
+                size 0.0015 0.02 0.045
+              }
+            }
+          ]
         }
       ]
       name "d1"
