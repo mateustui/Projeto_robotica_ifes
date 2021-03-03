@@ -56,7 +56,7 @@ int main()
 
         int key = wb_keyboard_get_key();
 
-        printf("| DISTANCIA: %.2f | \t | S1: %.0f \t S2: %.0f \t S3: %.0f \t S4: %.0f \t S5: %.0f |\n", valor, s1, s2, s3, s4, s5);
+        printf("| DISTANCIA: %.2f | \t | S1: %.0f | S2: %.0f | S3: %.0f | S4: %.0f | S5: %.0f |\n", valor, s1, s2, s3, s4, s5);
 
         if (key == 'I')
         {
