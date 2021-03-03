@@ -1,17 +1,18 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2020b utf8
 WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.6872464362874253 -0.4656357258391966 -0.5575622894640908 4.18366506909465
-  position -0.7550353798163982 2.654888738299467 0.6817621541255614
+  orientation 0.9930184432472947 0.11098354651054822 0.03996277986652604 5.587456889274964
+  position -0.6805432134777711 1.614709699552132 2.0739424409626688
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
-  floorSize 2 2
+  rotation 1 0 0 4.692820414042842e-06
+  floorSize 2.5 2
   floorAppearance Appearance {
     material Material {
       diffuseColor 1 1 1
@@ -19,11 +20,11 @@ RectangleArena {
   }
 }
 Robot {
-  translation -0.1159361577614562 0.02926592310644177 0.0887786379496399
-  rotation 0.005642006652573832 0.9999683640893962 -0.0056070117985635645 -1.578470997735411
+  translation -0.16153 0.0301453 0.166368
+  rotation 0.0023530409195582484 0.999981390788417 -0.005628612199637385 -2.363845307179586
   children [
     DistanceSensor {
-      translation 0.1 -0.005 0.07
+      translation 0.1 -0.005 0.026
       rotation 0 0 -1 1.5707996938995747
       children [
         DEF SensorInfravermelho Group {
@@ -83,19 +84,61 @@ Robot {
       type "infra-red"
     }
     DistanceSensor {
-      translation 0.1 -0.005 0.035
+      translation 0.1 -0.005 0.013
       rotation 0 0 -1 1.5707996938995747
       children [
-        DEF tcrt Shape {
-          appearance PBRAppearance {
-          }
-          geometry Box {
-            size 0.01 0.01 0.005
-          }
+        DEF SensorInfravermelho Group {
+          children [
+            DEF Base Transform {
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.1 0.1 0.1
+                    roughness 1
+                    metalness 0
+                    IBLStrength 0
+                  }
+                  geometry Box {
+                    size 0.005 0.012 0.0058
+                  }
+                }
+              ]
+            }
+            DEF Receptor Transform {
+              translation 0.002 -0.0025 0
+              rotation 0 0 1 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.2 0.1 0.2
+                  }
+                  geometry Capsule {
+                    height 0.005
+                    radius 0.0015
+                  }
+                }
+              ]
+            }
+            DEF Emissor Transform {
+              translation 0.002 0.0025 0
+              rotation 0 0 1 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.4 0.4 1
+                  }
+                  geometry Capsule {
+                    height 0.005
+                    radius 0.0015
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
       name "l2"
-      boundingObject USE tcrt
+      boundingObject USE SensorInfravermelho
       physics Physics {
       }
       type "infra-red"
@@ -104,52 +147,178 @@ Robot {
       translation 0.1 -0.005 0
       rotation 0 0 -1 1.5707996938995747
       children [
-        DEF tcrt Shape {
-          appearance PBRAppearance {
-          }
-          geometry Box {
-            size 0.01 0.01 0.005
-          }
+        DEF SensorInfravermelho Group {
+          children [
+            DEF Base Transform {
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.1 0.1 0.1
+                    roughness 1
+                    metalness 0
+                    IBLStrength 0
+                  }
+                  geometry Box {
+                    size 0.005 0.012 0.0058
+                  }
+                }
+              ]
+            }
+            DEF Receptor Transform {
+              translation 0.002 -0.0025 0
+              rotation 0 0 1 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.2 0.1 0.2
+                  }
+                  geometry Capsule {
+                    height 0.005
+                    radius 0.0015
+                  }
+                }
+              ]
+            }
+            DEF Emissor Transform {
+              translation 0.002 0.0025 0
+              rotation 0 0 1 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.4 0.4 1
+                  }
+                  geometry Capsule {
+                    height 0.005
+                    radius 0.0015
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
       name "l3"
-      boundingObject USE tcrt
+      boundingObject USE SensorInfravermelho
       physics Physics {
       }
       type "infra-red"
     }
     DistanceSensor {
-      translation 0.1 -0.005 -0.035
+      translation 0.1 -0.005 -0.013
       rotation 0 0 -1 1.5707996938995747
       children [
-        DEF tcrt Shape {
-          appearance PBRAppearance {
-          }
-          geometry Box {
-            size 0.01 0.01 0.005
-          }
+        DEF SensorInfravermelho Group {
+          children [
+            DEF Base Transform {
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.1 0.1 0.1
+                    roughness 1
+                    metalness 0
+                    IBLStrength 0
+                  }
+                  geometry Box {
+                    size 0.005 0.012 0.0058
+                  }
+                }
+              ]
+            }
+            DEF Receptor Transform {
+              translation 0.002 -0.0025 0
+              rotation 0 0 1 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.2 0.1 0.2
+                  }
+                  geometry Capsule {
+                    height 0.005
+                    radius 0.0015
+                  }
+                }
+              ]
+            }
+            DEF Emissor Transform {
+              translation 0.002 0.0025 0
+              rotation 0 0 1 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.4 0.4 1
+                  }
+                  geometry Capsule {
+                    height 0.005
+                    radius 0.0015
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
       name "l4"
-      boundingObject USE tcrt
+      boundingObject USE SensorInfravermelho
       physics Physics {
       }
       type "infra-red"
     }
     DistanceSensor {
-      translation 0.1 -0.005 -0.07
+      translation 0.1 -0.005 -0.026
       rotation 0 0 -1 1.5707996938995747
       children [
-        DEF tcrt Shape {
-          appearance PBRAppearance {
-          }
-          geometry Box {
-            size 0.01 0.01 0.005
-          }
+        DEF SensorInfravermelho Group {
+          children [
+            DEF Base Transform {
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.1 0.1 0.1
+                    roughness 1
+                    metalness 0
+                    IBLStrength 0
+                  }
+                  geometry Box {
+                    size 0.005 0.012 0.0058
+                  }
+                }
+              ]
+            }
+            DEF Receptor Transform {
+              translation 0.002 -0.0025 0
+              rotation 0 0 1 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.2 0.1 0.2
+                  }
+                  geometry Capsule {
+                    height 0.005
+                    radius 0.0015
+                  }
+                }
+              ]
+            }
+            DEF Emissor Transform {
+              translation 0.002 0.0025 0
+              rotation 0 0 1 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.4 0.4 1
+                  }
+                  geometry Capsule {
+                    height 0.005
+                    radius 0.0015
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
       name "l5"
-      boundingObject USE tcrt
+      boundingObject USE SensorInfravermelho
       physics Physics {
       }
       type "infra-red"
@@ -232,7 +401,7 @@ Robot {
         anchor -0.1 0 0
       }
       endPoint Solid {
-        translation -0.09999998165772148 1.6210927591894767e-06 -1.3514264204271922e-10
+        translation -0.09999998165772148 1.6210927591894734e-06 -1.3514264221859716e-10
         rotation 0 0.9999999999999999 0 0.007377623986545785
         children [
           DEF JuntaRoda HingeJoint {
@@ -243,7 +412,7 @@ Robot {
             }
             endPoint Solid {
               translation -0.02 -0.018 0
-              rotation 0.32249831803353507 -0.6693260408091644 0.669326143191994 3.765529916882067
+              rotation 0.32249831803353524 -0.6693260408091642 0.6693261431919941 3.765529916882067
               children [
                 DEF CalotaRodaL Transform {
                   children [
@@ -277,8 +446,6 @@ Robot {
               boundingObject USE rodaLroda
               physics Physics {
               }
-              linearVelocity -2.485688556912842e-05 2.0987403431036436e-08 0.03768189809900273
-              angularVelocity 3.770603293863788 -0.013719084699522738 0.002427680855015918
             }
           }
           DEF rodaLEixoHorizontal Transform {
@@ -324,8 +491,6 @@ Robot {
         }
         physics Physics {
         }
-        linearVelocity -0.00021859725894139972 2.1405032272816248e-07 0.03768165265091265
-        angularVelocity -1.30266448729968e-05 -0.012913661647661001 0.00014971567724084026
       }
     }
     DEF RodaE HingeJoint {
@@ -340,8 +505,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.050003748666589326 -8.91375195286101e-07 -0.0699998308138625
-        rotation -0.8454282552553156 0.3775069636830114 0.37780889029612097 4.546046129745891
+        translation 0.050003748666589326 -8.913751952875037e-07 -0.0699998308138625
+        rotation -0.8454282552553156 0.37750696368301173 0.37780889029612097 4.546046129745891
         children [
           DEF Calota Transform {
             children [
@@ -381,8 +546,6 @@ Robot {
         boundingObject USE rodaE
         physics Physics {
         }
-        linearVelocity -0.00028784523163008534 -2.3725043611527067e-06 0.03768313233860895
-        angularVelocity 1.2559514205488183 -2.082525059500828e-05 0.009603409299089982
       }
     }
     DEF RodaD HingeJoint {
@@ -397,8 +560,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.04999950435940167 -1.889291356043781e-06 0.07000060852157688
-        rotation 0.719748984635352 -0.4907027484275612 -0.49109287492491427 1.8931237041590074
+        translation 0.04999950435940167 -1.8892913560432817e-06 0.07000060852157688
+        rotation 0.7197489846353519 -0.49070274842756134 -0.49109287492491416 1.8931237041590074
         children [
           DEF Calota Transform {
             children [
@@ -438,8 +601,6 @@ Robot {
         boundingObject USE rodaD
         physics Physics {
         }
-        linearVelocity -0.0002877792010713752 2.370217185507218e-06 0.03767650174324411
-        angularVelocity 1.2559511767681588 -2.0759656180220805e-05 0.009603409803544143
       }
     }
     DEF Estrutura Transform {
@@ -466,10 +627,9 @@ Robot {
   physics Physics {
   }
   controller "controlador-principal"
-  linearVelocity -0.00028636975345329647 1.5070216008547085e-06 0.03768140018588038
-  angularVelocity -1.2018954658912061e-05 -3.065647833021025e-05 4.236372747208945e-06
 }
 Solid {
+  translation 0 -0.01 0
   scale 0.01 0.01 0.01
   children [
     Solid {

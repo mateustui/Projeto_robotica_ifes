@@ -12,7 +12,7 @@ void tras(WbDeviceTag motorE, WbDeviceTag motorD);
 void parar(WbDeviceTag motorE, WbDeviceTag motorD);
 void esquerda(WbDeviceTag motorE, WbDeviceTag motorD);
 void direita(WbDeviceTag motorE, WbDeviceTag motorD);
-
+void seguir_linha(WbDeviceTag motorE, WbDeviceTag motorD, int sinal);
 int main()
 {
     //Inicialização dos parâmetros da simulação
@@ -43,46 +43,75 @@ int main()
     wb_motor_set_velocity(motorD, 0.0 * VEL_MAX);
 
     wb_keyboard_enable(DT);
-
+    
+    int opc=0;
+    int erro=0;
+    float kp=0.005;
+    float ki=0.0;
+    int erro_soma=0.0;
+    int pi=0.0;
+    int vel=0;
     while (wb_robot_step(DT) != -1)
     {
-        double valor = wb_distance_sensor_get_value(d1);
+    int key = wb_keyboard_get_key();
+    double valor = wb_distance_sensor_get_value(d1);
 
         double s1 = wb_distance_sensor_get_value(l1);
         double s2 = wb_distance_sensor_get_value(l2);
         double s3 = wb_distance_sensor_get_value(l3);
         double s4 = wb_distance_sensor_get_value(l4);
         double s5 = wb_distance_sensor_get_value(l5);
-
-        int key = wb_keyboard_get_key();
+    
+      switch(opc)
+      {
+        case 0://parado
+        {
+          printf("Parar\n");
+          parar(motorE, motorD);
+          if (key == 'I')
+          {
+            opc=1;
+          }
+          break;
+        }
+        case 1:
+        {
+        if (key == 'P')
+          {
+            opc=0;
+          }
+          erro=s2-s4;
+          pi=erro*kp+erro_soma*ki;
+          erro_soma=erro;
+          if(erro_soma>10000)
+          {
+            erro_soma=10000;
+          }
+          else if(erro_soma<-10000)
+          {
+            erro_soma=-10000;
+          }
+          vel=1*pi;
+          if(vel>VEL_MAX-2)
+          {
+            vel=VEL_MAX;
+          }
+          else if(vel<-(VEL_MAX+2))
+          {
+            vel=-VEL_MAX;
+          }
+          seguir_linha( motorE,  motorD, vel);
+        break;
+        }
+        
+      
+      }
+    
+        
 
         printf("| DISTANCIA: %.2f | \t | S1: %.0f | S2: %.0f | S3: %.0f | S4: %.0f | S5: %.0f |\n", valor, s1, s2, s3, s4, s5);
 
-        if (key == 'I')
-        {
-            printf("Frente\n");
-            frente(motorE, motorD);
-        }
-        else if (key == 'K')
-        {
-            printf("Tras\n");
-            tras(motorE, motorD);
-        }
-        else if (key == 'J')
-        {
-            printf("Esquerda\n");
-            esquerda(motorE, motorD);
-        }
-        else if (key == 'L')
-        {
-            printf("Direita\n");
-            direita(motorE, motorD);
-        }
-        else if (key == 'P')
-        {
-            printf("Parar\n");
-            parar(motorE, motorD);
-        }
+      
     }
 
     wb_robot_cleanup();
@@ -118,4 +147,10 @@ void parar(WbDeviceTag motorE, WbDeviceTag motorD)
 {
     wb_motor_set_velocity(motorE, 0.0 * VEL_MAX);
     wb_motor_set_velocity(motorD, 0.0 * VEL_MAX);
+}
+
+void seguir_linha(WbDeviceTag motorE, WbDeviceTag motorD, int sinal)
+{
+    wb_motor_set_velocity(motorE, sinal+2.0 );
+    wb_motor_set_velocity(motorD, -sinal+2.0);
 }
