@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.23631250774394183 -0.8799710650234416 -0.41207684162699487 1.608472005834021
-  position -2.1805760999400694 2.0879196291692015 -0.328764897794935
+  orientation 0.5199064271270133 0.615985964327927 0.5918264938164036 4.133608098739547
+  position 0.06380439573905344 3.1240355735466347 -0.10336745951654225
 }
 TexturedBackground {
 }
@@ -33,8 +33,8 @@ DEF Obstaculo Solid {
   boundingObject USE Obstaculo
 }
 Robot {
-  translation -0.00660849 0.029273 -0.681944
-  rotation 0.0029494165935368436 -0.04994185580495556 0.9987477719527162 0.01202478744123869
+  translation -0.2897277326972059 0.02926667672051873 -0.19949239909266556
+  rotation 0.005666661101418837 0.9989941941727244 0.044480208645539025 0.252632
   children [
     DistanceSensor {
       translation 0.1 -0.005 0.026
@@ -409,23 +409,23 @@ Robot {
     }
     DEF RodaL HingeJoint {
       jointParameters HingeJointParameters {
-        position 12.49783171349831
+        position 12.60910671870731
         axis 0 1 0
         anchor -0.1 0 0
       }
       endPoint Solid {
-        translation -0.09999998170030258 1.6210927591894674e-06 1.2563914957770597e-09
-        rotation 0 -1 0 0.06853890086086423
+        translation -0.09999998167396368 1.6210927591894683e-06 -7.834781210051212e-10
+        rotation 0 1 0 0.04273610434813657
         children [
           DEF JuntaRoda HingeJoint {
             jointParameters HingeJointParameters {
-              position -2637.1984908599875
+              position -7954.313773871165
               axis 0 0 1
               anchor -0.02 -0.018 0
             }
             endPoint Solid {
               translation -0.02 -0.018 0
-              rotation -0.972920515832215 0.1634412228291129 -0.1634400090335928 1.5982447161761357
+              rotation -0.4613663547714764 0.6273520713395365 -0.6273519468933474 2.277058829874786
               children [
                 DEF CalotaRodaL Transform {
                   children [
@@ -508,7 +508,7 @@ Robot {
     }
     DEF RodaE HingeJoint {
       jointParameters HingeJointParameters {
-        position 850.8876664167806
+        position 152.4014278633026
         axis 0 0 -1
         anchor 0.05 0 -0.07
       }
@@ -518,8 +518,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.04999818577119523 -3.3993565245031243e-06 -0.0699998308138625
-        rotation -0.16831955278718125 0.6967401755348382 0.6972959600809443 3.475365195193057
+        translation 0.05000205468188465 -3.2596523264958492e-06 -0.0699998308138625
+        rotation 0.5602448037762231 -0.5854819150184877 -0.5859493894766216 2.1195643251575635
         children [
           DEF Calota Transform {
             children [
@@ -563,7 +563,7 @@ Robot {
     }
     DEF RodaD HingeJoint {
       jointParameters HingeJointParameters {
-        position 713.830077048372
+        position 1799.368024302249
         axis 0 0 -1
         anchor 0.05 0 0.07
       }
@@ -573,8 +573,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.04999947141202721 1.8803393804758107e-06 0.07000060852157688
-        rotation 0.23754466187102868 0.6865940618910773 0.687139816771296 2.674790917932429
+        translation 0.04999807060320534 -3.041536445613778e-07 0.07000060852157688
+        rotation 0.28154646011878787 -0.6782329813794681 -0.67877213684984 2.5922937443359357
         children [
           DEF Calota Transform {
             children [
