@@ -205,15 +205,15 @@ int main()
                 }
                 else if (count >= 4 && count < 10)//gira esquerda
                 {
-                    if(s2 > 800)
-                    {
-                        opc = 1;
-                    }
+                    
 
                     wb_motor_set_velocity(motorE, -2.0 );
                     wb_motor_set_velocity(motorD, +2.0);
                 }
-
+                if(s2 > 800)
+                    {
+                        opc = 1;
+                    }
                 count++;
                 
                 break;

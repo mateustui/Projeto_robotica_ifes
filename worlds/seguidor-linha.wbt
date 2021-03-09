@@ -1,10 +1,10 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2020b utf8
 WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
   orientation 0.5199064271270133 0.615985964327927 0.5918264938164036 4.133608098739547
-  position 0.06380439573905344 3.1240355735466347 -0.10336745951654225
+  position -0.179184280538589 5.073441557753886 0.033339492215679785
 }
 TexturedBackground {
 }
@@ -33,11 +33,11 @@ DEF Obstaculo Solid {
   boundingObject USE Obstaculo
 }
 Robot {
-  translation -0.2897277326972059 0.02926667672051873 -0.19949239909266556
-  rotation 0.005666661101418837 0.9989941941727244 0.044480208645539025 0.252632
+  translation -0.758673 0.0292667 0.304693
+  rotation 0.005550498381679582 0.9550397215456748 0.2964259135731469 0.0381091
   children [
     DistanceSensor {
-      translation 0.1 -0.005 0.026
+      translation 0.08 -0.005 0.026
       rotation 0 0 -1 1.5707996938995747
       children [
         DEF SensorInfravermelho Group {
@@ -97,7 +97,7 @@ Robot {
       type "infra-red"
     }
     DistanceSensor {
-      translation 0.1 -0.005 0.013
+      translation 0.08 -0.005 0.013
       rotation 0 0 -1 1.5707996938995747
       children [
         DEF SensorInfravermelho Group {
@@ -217,7 +217,7 @@ Robot {
       type "infra-red"
     }
     DistanceSensor {
-      translation 0.1 -0.005 -0.013
+      translation 0.08 -0.005 -0.013
       rotation 0 0 -1 1.5707996938995747
       children [
         DEF SensorInfravermelho Group {
@@ -277,7 +277,7 @@ Robot {
       type "infra-red"
     }
     DistanceSensor {
-      translation 0.1 -0.005 -0.026
+      translation 0.08 -0.005 -0.026
       rotation 0 0 -1 1.5707996938995747
       children [
         DEF SensorInfravermelho Group {
@@ -414,7 +414,7 @@ Robot {
         anchor -0.1 0 0
       }
       endPoint Solid {
-        translation -0.09999998167396368 1.6210927591894683e-06 -7.834781210051212e-10
+        translation -0.09999998167396368 1.6210927591894657e-06 -7.834781208883742e-10
         rotation 0 1 0 0.04273610434813657
         children [
           DEF JuntaRoda HingeJoint {
@@ -425,7 +425,7 @@ Robot {
             }
             endPoint Solid {
               translation -0.02 -0.018 0
-              rotation -0.4613663547714764 0.6273520713395365 -0.6273519468933474 2.277058829874786
+              rotation -0.46136635477147625 0.6273520713395366 -0.6273519468933472 2.277058829874786
               children [
                 DEF CalotaRodaL Transform {
                   children [
@@ -518,8 +518,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.05000205468188465 -3.2596523264958492e-06 -0.0699998308138625
-        rotation 0.5602448037762231 -0.5854819150184877 -0.5859493894766216 2.1195643251575635
+        translation 0.05000205468188465 -3.2596523264959352e-06 -0.0699998308138625
+        rotation 0.5602448037762227 -0.5854819150184878 -0.5859493894766219 2.1195643251575627
         children [
           DEF Calota Transform {
             children [
@@ -573,8 +573,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.04999807060320534 -3.041536445613778e-07 0.07000060852157688
-        rotation 0.28154646011878787 -0.6782329813794681 -0.67877213684984 2.5922937443359357
+        translation 0.04999807060320534 -3.04153644561244e-07 0.07000060852157688
+        rotation 0.2815464601187878 -0.6782329813794683 -0.6787721368498397 2.5922937443359353
         children [
           DEF Calota Transform {
             children [
@@ -678,8 +678,6 @@ DEF Lombada Solid {
   rotation 0.42163863852771805 -0.4217163803975138 0.802730436077337 1.7887772239972106
   children [
     DEF Lombada Shape {
-      appearance Asphalt {
-      }
       geometry Cylinder {
         height 0.4
         radius 0.03
