@@ -1,10 +1,10 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2020b utf8
 WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.9999750005208197 0.004999916668645527 0.004999916668645865 4.712363980593017
-  position -0.9487279667534879 4.032979548724111 0.7457964504128951
+  orientation 0.8486161402773981 0.5097873688093988 0.14130635181435283 5.651767222155968
+  position -2.702171354927228 4.0622326966551086 5.737990412737316
 }
 TexturedBackground {
 }
@@ -33,8 +33,8 @@ DEF Obstaculo Solid {
   boundingObject USE Obstaculo
 }
 Robot {
-  translation -0.9550534058461743 0.02917341305257072 0.7966527386605204
-  rotation -0.006942363775224633 -0.999652391786023 0.02543421281847844 0.5050020957677169
+  translation -0.728383 0.0291734 0.29958
+  rotation -0.013639395863834735 0.05806378239207936 0.9982196972885251 0.0131955
   children [
     DistanceSensor {
       translation 0.08 -0.005 0.026
@@ -413,7 +413,7 @@ Robot {
         anchor -0.1 0 0
       }
       endPoint Solid {
-        translation -0.10000000328875927 1.6210927591894653e-06 -1.8045539833303675e-08
+        translation -0.10000000328875926 1.6210927591894484e-06 -1.80455398365179e-08
         rotation 0 -1 0 4.532109739358849
         children [
           DEF JuntaRoda HingeJoint {
@@ -424,7 +424,7 @@ Robot {
             }
             endPoint Solid {
               translation -0.02 -0.018 0
-              rotation 0.6482107315053321 -0.5384344616071842 0.538434005348013 4.29182716965191
+              rotation 0.6482107315053297 -0.5384344616071843 0.5384340053480153 4.2918271696519135
               children [
                 DEF CalotaRodaL Transform {
                   children [
@@ -458,8 +458,6 @@ Robot {
               boundingObject USE rodaLroda
               physics Physics {
               }
-              linearVelocity 0.037107345698649125 2.2017511872535762e-07 -0.09837667730387517
-              angularVelocity -9.971383539401575 -0.8849279272867944 -3.6547376492776147
             }
           }
           DEF rodaLEixoHorizontal Transform {
@@ -505,8 +503,6 @@ Robot {
         }
         physics Physics {
         }
-        linearVelocity 0.04690128615539412 -1.330612447970216e-06 -0.09474848492694325
-        angularVelocity -0.00010201190059010885 -0.694958968111571 -2.1640348390214873e-05
       }
     }
     DEF RodaE HingeJoint {
@@ -521,8 +517,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.05000080904303386 -3.767293498797666e-06 -0.0699998308138625
-        rotation -0.42620813566117527 0.6394113431110969 0.6399216822370443 3.9479537081250786
+        translation 0.05000080904303388 -3.7672934988062935e-06 -0.0699998308138625
+        rotation -0.426208135661175 0.6394113431110936 0.6399216822370476 3.9479537081250884
         children [
           DEF Calota Transform {
             children [
@@ -562,8 +558,6 @@ Robot {
         boundingObject USE rodaE
         physics Physics {
         }
-        linearVelocity 0.04356474256066466 2.1787499003109066e-06 0.023513821366541756
-        angularVelocity 0.945694873514256 -0.7149398209545417 -1.762371400235983
       }
     }
     DEF RodaD HingeJoint {
@@ -578,8 +572,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.05000191416328998 3.886648042327582e-07 0.07000060852157688
-        rotation 0.8483403314258645 0.3742298768930157 0.37452727713331213 1.7337490997555538
+        translation 0.05000191416328999 3.886648042291328e-07 0.07000060852157688
+        rotation 0.848340331425862 0.374229876893014 0.37452727713331985 1.7337490997555296
         children [
           DEF Calota Transform {
             children [
@@ -619,8 +613,6 @@ Robot {
         boundingObject USE rodaD
         physics Physics {
         }
-        linearVelocity -0.043837710010796914 -2.107140351763918e-06 -0.02348607071375572
-        angularVelocity -0.9455989136686452 -0.7141944973131286 1.7624969474332302
       }
     }
     DEF Estrutura Transform {
@@ -647,8 +639,6 @@ Robot {
   physics Physics {
   }
   controller "controlador-principal"
-  linearVelocity 0.015824229324407517 1.3624935796328011e-06 -0.029675633070847626
-  angularVelocity 4.810380499018687e-05 -0.7079820685292824 6.141567608920772e-05
 }
 DEF Caminho Solid {
   scale 0.01 0.01 0.01

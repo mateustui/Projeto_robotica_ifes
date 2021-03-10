@@ -187,7 +187,7 @@ int main()
                     wb_motor_set_velocity(motorD, -2.0);
                 }
 
-                if(s4 > 800)
+                if(s4 > 800 && count >10)
                 {
                     opc = 1;
                 }
@@ -210,7 +210,7 @@ int main()
                     wb_motor_set_velocity(motorE, -2.0 );
                     wb_motor_set_velocity(motorD, +2.0);
                 }
-                if(s2 > 800)
+                if(s2 > 800 && count >10)
                 {
                     opc = 1;
                 }
