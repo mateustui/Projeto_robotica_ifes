@@ -81,7 +81,7 @@ int main()
                     opc = 0;
                 }
 
-                if(valor < 100)
+                if(valor < 800)
                 {
                     opc = 2;
                 }
@@ -128,37 +128,37 @@ int main()
 
             case 2://desvio
             {
-                if(count >= 0 &&  count < 4)//gira direita
+                if(count >= 0 &&  count < 34)//gira direita
                 {
                     wb_motor_set_velocity(motorE, +2.0 );
                     wb_motor_set_velocity(motorD, -2.0);
                 }
-                else if (count >= 4 && count < 10)//frente
+                else if (count >= 34 && count < 75)//frente
                 {
                     wb_motor_set_velocity(motorE, +2.0 );
                     wb_motor_set_velocity(motorD, +2.0);
                 }
-                else if (count >= 10 && count < 14)//gira esquerda
+                else if (count >= 75 && count < 110)//gira esquerda
                 {
                     wb_motor_set_velocity(motorE, -2.0 );
                     wb_motor_set_velocity(motorD, +2.0);
                 }
-                else if (count >= 14 && count < 20)//frente
+                else if (count >= 110 && count < 215)//frente
                 {
                     wb_motor_set_velocity(motorE, +2.0 );
                     wb_motor_set_velocity(motorD, +2.0);
                 }
-                else if (count >= 20 && count < 24)//gira esquerda
+                else if (count >= 215 && count < 249)//gira esquerda
                 {
                     wb_motor_set_velocity(motorE, -2.0 );
                     wb_motor_set_velocity(motorD, +2.0);
                 }
-                else if (count >= 24 && count < 30)//frente
+                else if (count >= 249 && count < 290)//frente
                 {
                     wb_motor_set_velocity(motorE, +2.0 );
                     wb_motor_set_velocity(motorD, +2.0);
                 }
-                else if(count>= 30 &&  count < 64)//gira direita ate sensor s4 achar a linha preta
+                else if(count>= 290)//gira direita ate sensor s4 achar a linha preta
                 {
                     if(s4 > 800)
                     {
@@ -211,9 +211,10 @@ int main()
                     wb_motor_set_velocity(motorD, +2.0);
                 }
                 if(s2 > 800)
-                    {
-                        opc = 1;
-                    }
+                {
+                    opc = 1;
+                }
+                
                 count++;
                 
                 break;
